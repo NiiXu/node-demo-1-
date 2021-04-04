@@ -25,23 +25,19 @@ var server = http.createServer(function(request, response){
         response.write(`
         <!DOCTYPE html1>
         <head>
-            <link rel="stylesheet" href="/x">
+            <link rel="stylesheet" href="/style.css">
         </head>
+        
         <body>
+
             <h1>标题</h1>
-            <script src="/y"></script>
         </body>
     `);
     response.end("");
-  } else if(path == "/x"){
+  } else if(path == "/style.css"){
     response.statusCode = 200;
     response.setHeader("Content-Type","text/css;charset=utf-8");
     response.write(`body{color:red;}`);
-    response.end();
-  } else if (path == "/y"){
-    response.statusCode = 200;
-    response.setHeader("Content-Type","text/javascript;charset=utf-8");
-    response.write(`console.log('这是JS内容')`);
     response.end();
   }
     else {
